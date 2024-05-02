@@ -12,6 +12,12 @@
 		5035B2252BDEE7C300525955 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5035B2242BDEE7C300525955 /* ContentView.swift */; };
 		5035B2272BDEE7C600525955 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5035B2262BDEE7C600525955 /* Assets.xcassets */; };
 		5035B22A2BDEE7C600525955 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5035B2292BDEE7C600525955 /* Preview Assets.xcassets */; };
+		5035B2352BDEEAA300525955 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5035B2342BDEEAA300525955 /* SplashScreenView.swift */; };
+		5035B2392BDEF60300525955 /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5035B2382BDEF60300525955 /* SideMenuView.swift */; };
+		5035B23B2BDEF75C00525955 /* SideMenuContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5035B23A2BDEF75C00525955 /* SideMenuContentView.swift */; };
+		5035B23D2BDF014A00525955 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5035B23C2BDF014A00525955 /* Colors.swift */; };
+		5035B23F2BDF12C600525955 /* WeatherDeatilPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5035B23E2BDF12C600525955 /* WeatherDeatilPage.swift */; };
+		5035B2432BDF475B00525955 /* NextdayWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5035B2422BDF475B00525955 /* NextdayWeatherView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +51,12 @@
 		5035B2242BDEE7C300525955 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5035B2262BDEE7C600525955 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5035B2292BDEE7C600525955 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5035B2342BDEEAA300525955 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		5035B2382BDEF60300525955 /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
+		5035B23A2BDEF75C00525955 /* SideMenuContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuContentView.swift; sourceTree = "<group>"; };
+		5035B23C2BDF014A00525955 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		5035B23E2BDF12C600525955 /* WeatherDeatilPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDeatilPage.swift; sourceTree = "<group>"; };
+		5035B2422BDF475B00525955 /* NextdayWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextdayWeatherView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,9 +91,15 @@
 			isa = PBXGroup;
 			children = (
 				5035B2222BDEE7C300525955 /* WeatherWiseApp.swift */,
+				5035B2342BDEEAA300525955 /* SplashScreenView.swift */,
 				5035B2242BDEE7C300525955 /* ContentView.swift */,
+				5035B2382BDEF60300525955 /* SideMenuView.swift */,
+				5035B23C2BDF014A00525955 /* Colors.swift */,
+				5035B23A2BDEF75C00525955 /* SideMenuContentView.swift */,
+				5035B23E2BDF12C600525955 /* WeatherDeatilPage.swift */,
 				5035B2262BDEE7C600525955 /* Assets.xcassets */,
 				5035B2282BDEE7C600525955 /* Preview Content */,
+				5035B2422BDF475B00525955 /* NextdayWeatherView.swift */,
 			);
 			path = "WeatherWise Watch App";
 			sourceTree = "<group>";
@@ -193,7 +211,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5035B2252BDEE7C300525955 /* ContentView.swift in Sources */,
+				5035B23D2BDF014A00525955 /* Colors.swift in Sources */,
+				5035B23F2BDF12C600525955 /* WeatherDeatilPage.swift in Sources */,
+				5035B2432BDF475B00525955 /* NextdayWeatherView.swift in Sources */,
 				5035B2232BDEE7C300525955 /* WeatherWiseApp.swift in Sources */,
+				5035B23B2BDEF75C00525955 /* SideMenuContentView.swift in Sources */,
+				5035B2392BDEF60300525955 /* SideMenuView.swift in Sources */,
+				5035B2352BDEEAA300525955 /* SplashScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
