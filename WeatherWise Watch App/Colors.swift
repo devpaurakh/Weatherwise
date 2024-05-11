@@ -21,3 +21,10 @@ let orange = Color(
     green: Double(0x7A) / 255.0,
     blue: Double(0x17) / 255.0
 )
+
+let blueColor = Color(
+    red: Double(0x3E)/255.0,
+    green:Double(0xA8)/255.0,
+    blue: Double(0xE3)/255.0
+)
+
