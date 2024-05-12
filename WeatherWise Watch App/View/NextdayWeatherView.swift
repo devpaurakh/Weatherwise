@@ -1,12 +1,13 @@
 import SwiftUI
 
 struct NextdayWeatherView: View {
+    @Binding var results:[Forecastday]
+    @Binding var cityName:String
+    var index:Int
     var body: some View {
         ZStack{
-            Color(backgroundColor)
+            Color.init(getWeatherBackgroundColor(code: results[0].day.condition.code))
                 .ignoresSafeArea()
-            
-            
             ScrollView {
                 
                 ZStack{
@@ -15,16 +16,15 @@ struct NextdayWeatherView: View {
                         .frame(width: 160, height: 81)
                         .offset(y: -25)
                     HStack(alignment:.top, content: {
-                        Image("sunny")
-                            .resizable()
-                            .frame(width: 50,height: 50)
+                        Text("\(getWeatherImage(code:results[1].day.condition.code))")
+                            .font(.system(size: 60))
                         VStack(alignment:.leading,spacing: 3, content: {
-                            Text("Tomorrow")
+                            Text("\(getShortDate(epoch: results[1].date_epoch))")
                                 .font(.system(size: 15))
                                 .fontWeight(.bold)
                             
                             HStack{
-                                Text("28°c")
+                                Text("\(Int(results[1].day.avgtemp_c))°c")
                                     .font(.system(size: 10))
                                     .fontWeight(.bold)
                                 
@@ -32,12 +32,12 @@ struct NextdayWeatherView: View {
                                     .font(.system(size: 10))
                                     .fontWeight(.bold)
                                 
-                                Text("29°c")
+                                Text("\(Int(results[1].day.avgtemp_c))°c")
                                     .font(.system(size: 10))
                                     .fontWeight(.light)
                             }
                             
-                            Text("Heavy Rain")
+                            Text("\(results[1].day.condition.text)")
                                 .font(.system(size: 10))
                             
                             
@@ -65,7 +65,7 @@ struct NextdayWeatherView: View {
                                     .foregroundColor(.black)
                                     .font(.system(size: 8))
                                 
-                                Text("32%")
+                                Text("\(Int(results[1].day.avghumidity))%")
                                     .foregroundColor(.black)
                                     .font(.system(size: 10))
                                     .bold()
@@ -78,7 +78,7 @@ struct NextdayWeatherView: View {
                                     .foregroundColor(.black)
                                     .font(.system(size: 8))
                                 
-                                Text("23km/h")
+                                Text("\(Int(results[1].day.maxwind_kph))km/h")
                                     .foregroundColor(.black)
                                     .font(.system(size: 10))
                                     .bold()
@@ -91,7 +91,7 @@ struct NextdayWeatherView: View {
                                     .foregroundColor(.black)
                                     .font(.system(size: 8))
                                 
-                                Text("32%")
+                                Text("\(Int(results[1].day.totalprecip_mm))mm")
                                     .foregroundColor(.black)
                                     .font(.system(size: 10))
                                     .bold()
@@ -100,53 +100,79 @@ struct NextdayWeatherView: View {
                         .offset(y: -29)
                     }
                 
-                
                 VStack(alignment: .leading, spacing:3, content: {
                     Text("This week")
-                        .foregroundColor(.black)
                         .font(.system(size: 10))
                         .fontWeight(.bold)
+                        .offset(x:5)
+
+                    HStack(spacing: 20, content: {
+                            Text("\(getShortDate(epoch: results[0].date_epoch))")
+                                .font(.system(size: 10))
+                            
+                            Text("\(Int(results[0].day.avgtemp_c))°c")
+                                .font(.system(size: 10))
+                            
+                            Text("\(getWeatherImage(code:results[0].day.condition.code))")
+                        
+                        Text("\(results[0].day.condition.text)")
+                            .font(.system(size: 9))
+                        })
                     
                     HStack(spacing: 20, content: {
-                        Text("Monday")
-                            .foregroundColor(.black)
-                            .font(.system(size: 10))
+                            Text("\(getShortDate(epoch: results[1].date_epoch))")
+                                .font(.system(size: 10))
+                            
+                            Text("\(Int(results[1].day.avgtemp_c))°c")
+                                .font(.system(size: 10))
+                            
+                            Text("\(getWeatherImage(code:results[1].day.condition.code))")
                         
-                        Text("28°c /18°c")
-                            .foregroundColor(.black)
-                            .font(.system(size: 10))
-                        
-                        Image(systemName: "sun.max")
-                            .foregroundColor(.black)
-                    })
+                        Text("\(results[1].day.condition.text)")
+                            .font(.system(size: 9))
+                        })
                     
                     HStack(spacing: 20, content: {
-                        Text("Monday")
-                            .foregroundColor(.black)
-                            .font(.system(size: 10))
+                            Text("\(getShortDate(epoch: results[2].date_epoch))")
+                                .font(.system(size: 10))
+                            
+                            Text("\(Int(results[2].day.avgtemp_c))°c")
+                                .font(.system(size: 10))
+                            
+                            Text("\(getWeatherImage(code:results[2].day.condition.code))")
                         
-                        Text("28°c /18°c")
-                            .foregroundColor(.black)
-                            .font(.system(size: 10))
-                        
-                        Image(systemName: "sun.max")
-                            .foregroundColor(.black)
-                    })
+                        Text("\(results[2].day.condition.text)")
+                            .font(.system(size: 9))
+                        })
+                    
+                   
                     
                     
-                    HStack(spacing: 20, content: {
-                        Text("Monday")
-                            .foregroundColor(.black)
-                            .font(.system(size: 10))
-                        
-                        Text("28°c /18°c")
-                            .foregroundColor(.black)
-                            .font(.system(size: 10))
-                        
-                        Image(systemName: "sun.max")
-                            .foregroundColor(.black)
-                        
-                    })
+                    
+                    
+                    
+                    
+//                    List(results){forecast in
+//                        
+//                        HStack(spacing: 20, content: {
+//                            Text("\(getShortDate(epoch: forecast.date_epoch))")
+//                                    .font(.system(size: 10))
+//                                    .bold()
+//                                
+//                            Text("\(Int(forecast.day.avgtemp_c))")
+//                                    .font(.system(size: 10))
+//                                
+//                            Text("\(getWeatherImage(code: forecast.day.condition.code))")
+//                            
+//                            Text("\(forecast.day.condition.text)")
+//                                .font(.system(size: 9))
+//                            })
+//                            
+//                        
+//                    }
+                
+                    
+                  
                 })
                 .offset(y: -30)
             }
@@ -155,7 +181,7 @@ struct NextdayWeatherView: View {
 }
 
 
-#Preview {
-    NextdayWeatherView()
-}
+//#Preview {
+//    NextdayWeatherView()
+//}
 

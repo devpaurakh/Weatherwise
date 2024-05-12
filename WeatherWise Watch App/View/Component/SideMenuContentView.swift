@@ -15,10 +15,16 @@ struct SideMenuContentView: View {
                     .resizable()
                     .frame(width: 60,height: 60)
                 
-                    Button("About Us") {}
-                        .buttonStyle(.borderedProminent)
+                
+                NavigationLink(destination: AboutUsView()) {
+                    Text("About Us")
                         .font(.system(size: 15))
-                        .foregroundColor(backgroundColor)
+                        .foregroundColor(.black)
+                       
+                }
+                .buttonStyle(BorderlessButtonStyle())
+
+                    
                 }
             .frame(width: 90, height: 50)
                

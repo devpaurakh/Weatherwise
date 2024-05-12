@@ -28,3 +28,10 @@ let blueColor = Color(
     blue: Double(0xE3)/255.0
 )
 
+
+let greenishColor = Color(
+    red: Double(0xD9)/255.0,
+    green:Double(0xD9)/255.0,
+    blue: Double(0xD9)/255.0
+)
+
